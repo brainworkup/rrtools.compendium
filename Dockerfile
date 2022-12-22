@@ -2,7 +2,7 @@
 FROM rocker/verse:4.2.2
 
 # required
-MAINTAINER Your Name <your_email@somewhere.com>
+LABEL Joey Trampush <your_email@somewhere.com>
 
 COPY . /<REPO>
 
@@ -19,4 +19,4 @@ RUN . /etc/environment \
   && R -e "renv::restore()" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main qmd file
-  && R -e "quarto::quarto_render('/<REPO>/analysis/paper/paper.qmd')"
+  && R -e "quarto::quarto_render('/rrtools.compendium/analysis/paper/paper.qmd')"
