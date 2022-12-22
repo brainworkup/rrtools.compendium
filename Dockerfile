@@ -14,7 +14,7 @@ RUN . /etc/environment \
   && sudo apt-get install libudunits2-dev -y \
   # build this compendium package
   && R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))" \
-  && R -e "remotes::install_github(c('rstudio/renv', 'quarto-dev/quarto-r'))" \
+  && R -e "remotes::install_github(c('rstudio/renv', 'quarto-dev/quarto-r'), depedendencies = TRUE)" \
   # install pkgs we need
   && R -e "renv::restore()" \
   # render the manuscript into a docx, you'll need to edit this if you've
