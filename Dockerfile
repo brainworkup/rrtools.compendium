@@ -19,4 +19,4 @@ RUN . /etc/environment \
   && R -e "renv::restore()" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main qmd file
-  && R -e "quarto::quarto_render('/rrtools.compendium/analysis/paper/paper.qmd')"
+  && R -e "quarto::quarto_render('analysis/paper/paper.qmd')"
